@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cake Delight | Rose ********** – Bagalkot</title>
+    <title>Cake Delight | Rose Patisserie – Bagalkot</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -449,10 +449,11 @@
         .custom-cake-card {
             background: #ffffff;
             border-radius: 2rem;
-            padding: 2rem;
+            padding: 3rem 2rem;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 107, 107, 0.08);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
         .custom-cake-card::before {
             content: "🌹";
@@ -464,78 +465,24 @@
             pointer-events: none;
             transform: rotate(-15deg);
         }
-        .cake-builder-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+        
+        .greeting-box {
             position: relative;
             z-index: 1;
         }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .form-group label {
-            font-weight: 600;
-            color: #c95d5d;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .label-icon {
-            font-size: 1.1rem;
-        }
-        .form-group select,
-        .form-group input,
-        .form-group textarea {
-            background: #fffaf8;
-            border: 1.5px solid #ffe0d8;
-            border-radius: 1.2rem;
-            padding: 0.75rem 1rem;
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            transition: all 0.25s ease;
-            outline: none;
-            color: #2d1f1c;
-            width: 100%;
-        }
-        .form-group select:focus,
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #ff8a8a;
-            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
-            background: white;
-        }
-        .form-full {
-            grid-column: span 2;
-        }
-        .whatsapp-submit {
-            background: linear-gradient(135deg, #ff6b6b, #e85d5d);
-            border: none;
-            color: white;
+        .greeting-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: #e85d5d;
+            margin-bottom: 0.8rem;
             font-weight: 700;
-            padding: 0.9rem;
-            border-radius: 3rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.7rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.25s;
-            box-shadow: 0 10px 20px -5px rgba(230, 93, 93, 0.4);
-            width: 100%;
-            font-family: var(--font-body);
         }
-        .whatsapp-submit:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #ff8a8a, #ff6b6b);
-            box-shadow: 0 18px 28px -8px rgba(230, 93, 93, 0.5);
-        }
-        .whatsapp-submit:active {
-            transform: scale(0.97);
+        .greeting-text {
+            color: #553c36;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* ─── MAP CARD ──────────────────────────── */
@@ -732,6 +679,59 @@
             font-size: 1rem;
         }
 
+        /* WhatsApp Button Custom Styling (Inside Cart) */
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 6px 14px rgba(37, 211, 102, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.9rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: var(--font-body);
+        }
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            box-shadow: 0 10px 22px rgba(37, 211, 102, 0.4);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ─── NEW FLOATING ORDER ONLINE BUTTON ─── */
+        .floating-order-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            border: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .floating-order-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+            background: #20ba5a;
+        }
+
         /* ─── QUICK VIEW MODAL ──────────────────── */
         .quick-view-overlay {
             position: fixed;
@@ -813,42 +813,6 @@
             color: white;
         }
 
-        /* ─── WHATSAPP FLOAT ────────────────────── */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #25D366;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.35);
-            z-index: 99;
-            transition: transform 0.25s, box-shadow 0.25s;
-            animation: floatPulse 2.5s ease-in-out infinite;
-        }
-        @keyframes floatPulse {
-            0%,
-            100% {
-                box-shadow: 0 6px 22px rgba(37, 211, 102, 0.35);
-            }
-            50% {
-                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
-                transform: translateY(-4px);
-            }
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
-            animation: none;
-        }
-
         /* ─── TOAST ─────────────────────────────── */
         .toast {
             position: fixed;
@@ -906,12 +870,6 @@
             .map-card {
                 grid-template-columns: 1fr;
             }
-            .cake-builder-form {
-                grid-template-columns: 1fr;
-            }
-            .form-full {
-                grid-column: span 1;
-            }
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
                 gap: 1.2rem;
@@ -943,19 +901,17 @@
             .cart-drawer.open {
                 right: 0;
             }
-            .whatsapp-float {
-                bottom: 1.2rem;
-                right: 1.2rem;
-                width: 48px;
-                height: 48px;
-                font-size: 1.5rem;
+            .floating-order-btn {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.95rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ═══════════ NAVIGATION ══════════════════ -->
     <nav class="nav" id="navbar">
         <a href="#" class="logo">🌸 Cake Delight</a>
         <ul class="nav-links">
@@ -972,24 +928,22 @@
         </button>
     </nav>
 
-    <!-- ═══════════ MOBILE NAV ══════════════════ -->
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <div class="mobile-nav" id="mobileNav">
         <a href="#home" class="mobile-nav-link">🏠 Home</a>
         <a href="#products" class="mobile-nav-link">🛍️ Shop Cakes</a>
-        <a href="#custom" class="mobile-nav-link">🎨 ****** Cake</a>
+        <a href="#custom" class="mobile-nav-link">🎨 Custom Cake</a>
         <a href="#location" class="mobile-nav-link">📍 Visit Us</a>
     </div>
 
-    <!-- ═══════════ HERO SECTION ════════════════ -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
                 <span class="hero-badge">✨ Premium Rose Patisserie</span>
-                <h1 class="hero-title">***** ***** <span>Slice</span> Blossoms with Joy</h1>
-                <p style="margin:1rem 0 1.8rem; color:#553c36; font-size:1.05rem;">*********** elegance in Bagalkot. Vibrant, fresh &amp; unforgettable.</p>
+                <h1 class="hero-title">Every Single <span>Slice</span> Blossoms with Joy</h1>
+                <p style="margin:1rem 0 1.8rem; color:#553c36; font-size:1.05rem;">Handcrafted elegance in Bagalkot. Vibrant, fresh & unforgettable.</p>
                 <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-                    <a href="#products" class="btn btn-primary">🍰 ******* Now</a>
+                    <a href="#products" class="btn btn-primary">🍰 Order Now</a>
                     <a href="#custom" class="btn btn-outline">🎨 Design Yours</a>
                 </div>
             </div>
@@ -999,12 +953,11 @@
         </div>
     </section>
 
-    <!-- ═══════════ PRODUCTS SECTION ════════════ -->
     <section class="section" id="products">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">*** Collection</span>
-                <h2 class="section-title">Bright &amp; ******** Treats</h2>
+                <span class="section-tag">Our Collection</span>
+                <h2 class="section-title">Bright & Delicious Treats</h2>
             </div>
             <div class="category-filters" id="filters">
                 <button class="filter-btn active" data-cat="all">🌟 All</button>
@@ -1022,91 +975,50 @@
         </div>
     </section>
 
-    <!-- ═══════════ CUSTOM CAKE SECTION ═════════ -->
     <section class="section" id="custom" style="background:#fff3ef;">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Bespoke Art</span>
-                <h2 class="section-title">Design **** ***** Cake</h2>
+                <h2 class="section-title">Design Your Custom Cake</h2>
             </div>
             <div class="custom-cake-card">
-                <form class="cake-builder-form" id="cakeForm" autocomplete="off">
-                    <div class="form-group">
-                        <label><span class="label-icon">🎂</span> Size</label>
-                        <select id="cakeSize">
-                            <option value='6" (4-6 pcs)'>6" (4-6 pcs)</option>
-                            <option value='8" (8-10 pcs)'>8" (8-10 pcs)</option>
-                            <option value='10" (12-16 pcs)'>10" (12-16 pcs)</option>
-                            <option value="Tiered">Tiered</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><span class="label-icon">🍫</span> Flavor</label>
-                        <select id="cakeFlavor">
-                            <option value="Rose Velvet">Rose Velvet</option>
-                            <option value="Strawberry Blush">Strawberry Blush</option>
-                            <option value="Rich Chocolate">Rich Chocolate</option>
-                            <option value="Dewar's Whisky Infusion">Dewar's Whisky Infusion</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><span class="label-icon">🧁</span> Filling</label>
-                        <select id="cakeFilling">
-                            <option value="Berry Compote">***** Compote</option>
-                            <option value="Rose Ganache">Rose Ganache</option>
-                            <option value="Caramel Drizzle">******* Drizzle</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><span class="label-icon">✨</span> Frosting</label>
-                        <select id="cakeFrosting">
-                            <option value="Pink Buttercream">**** Buttercream</option>
-                            <option value="Mirror Glaze">Mirror Glaze</option>
-                            <option value="Cream Cheese">Cream Cheese</option>
-                        </select>
-                    </div>
-                    <div class="form-group form-full">
-                        <label><span class="label-icon">💬</span> Special Message</label>
-                        <input type="text" id="cakeMessage" placeholder="e.g. Happy Anniversary!">
-                    </div>
-                    <div class="form-group form-full">
-                        <button type="submit" class="whatsapp-submit">📲 **** ******** Enquiry</button>
-                    </div>
-                </form>
+                <div class="greeting-box">
+                    <h3 class="greeting-title">Thank You For Choosing Us! 🌹</h3>
+                    <p class="greeting-text">We craft beautiful custom designs tailored to your special moments. Explore our premium flavors above and let every celebration blossom with sweet joy!</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════ LOCATION SECTION ════════════ -->
     <section class="section" id="location">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Visit Us</span>
-                <h2 class="section-title">Find **** Delight</h2>
+                <h2 class="section-title">Find Cake Delight</h2>
             </div>
             <div class="map-card">
                 <div>
                     <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.8!2d75.7!3d16.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDEwJzQ4LjAiTiA3NcKwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+                    src="https://maps.google.com/maps?q=Old%20I%20B%20Road,%20Extension%20Area,%20Kaulpet,%20Bagalkot,%20Karnataka%20587101&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%" height="300" style="border-radius:1.5rem; border:0;" loading="lazy"
                     title="Cake Delight Location Map"></iframe>
                 </div>
                 <div class="map-info-card">
-                    <p><strong>📍 Address:</strong> Old I B Road, ***** Area, Kaulpet, Bagalkot, ********* 587101</p>
+                    <p><strong>📍 Address:</strong> Old I B Road, Extension Area, Kaulpet, Bagalkot, Karnataka 587101</p>
                     <p><strong>📞 Phone:</strong> 074114 67020</p>
                     <p><strong>🕐 Hours:</strong> Mon–Sat: 8AM–9PM | Sun: 9AM–6PM</p>
-                    <a href="https://wa.me/917411467020" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:0.8rem; display:inline-flex; align-self:flex-start;">💬 Order on WhatsApp</a>
+                    <div class="greeting-box" style="margin-top: 1rem; padding: 0.5rem; background: #fffaf8; border-radius: 1rem;">
+                        <p style="color: #e85d5d; font-weight: 600;">Welcome to Bagalkot's finest Rose Patisserie! ✨</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════ FOOTER ══════════════════════ -->
     <footer>
-        <p>© 2025 Cake Delight – **** Patisserie. Bagalkot's finest. Made with 🌹</p>
+        <p>© 2026 Cake Delight – Rose Patisserie. Bagalkot's finest. Made with 🌹</p>
     </footer>
 
-    <!-- ═══════════ CART DRAWER ═════════════════ -->
     <div id="cartOverlay" class="cart-overlay"></div>
     <div id="cartDrawer" class="cart-drawer">
         <div class="cart-drawer-header">
@@ -1119,11 +1031,13 @@
                 <span>Total</span>
                 <span id="cartTotal">₹0</span>
             </div>
-            <a href="#" id="whatsappOrderBtn" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; justify-content:center;">💬 Order on WhatsApp</a>
+            <button id="whatsappOrderBtn" class="btn btn-whatsapp">💬 Order via WhatsApp</button>
+            <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: #fff0ec; border-radius: 1.5rem; font-weight: 600; color: #e85d5d;">
+                💖 Thank you for browsing our delicious treats!
+            </div>
         </div>
     </div>
 
-    <!-- ═══════════ QUICK VIEW MODAL ════════════ -->
     <div id="quickViewOverlay" class="quick-view-overlay">
         <div class="quick-view-modal">
             <button class="quick-view-close" id="quickViewClose" aria-label="Close">✕</button>
@@ -1131,14 +1045,14 @@
             <h3 id="qvName"></h3>
             <div class="qv-price" id="qvPrice"></div>
             <p class="qv-desc" id="qvDesc"></p>
-            <button class="btn btn-primary btn-sm" id="qvAddToCart">🛒 *** to Cart</button>
+            <button class="btn btn-primary btn-sm" id="qvAddToCart">🛒 Add to Cart</button>
         </div>
     </div>
 
-    <!-- ═══════════ WHATSAPP FLOAT ═════════════ -->
-    <a href="https://wa.me/917411467020" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+    <button id="floatingOrderBtn" class="floating-order-btn" aria-label="Order Online on WhatsApp">
+        <span style="font-size: 1.2rem;">💬</span> Order Online
+    </button>
 
-    <!-- ═══════════ SCRIPTS ═════════════════════ -->
     <script>
         (function() {
             // ─────── PRODUCTS DATA ─────────────────────
@@ -1168,7 +1082,6 @@
             const cartItemsList = document.getElementById("cartItemsList");
             const cartFooter = document.getElementById("cartFooter");
             const cartTotalEl = document.getElementById("cartTotal");
-            const whatsappOrderBtn = document.getElementById("whatsappOrderBtn");
             const cartDrawer = document.getElementById("cartDrawer");
             const cartOverlay = document.getElementById("cartOverlay");
             const quickViewOverlay = document.getElementById("quickViewOverlay");
@@ -1181,6 +1094,8 @@
             const mobileOverlay = document.getElementById("mobileOverlay");
             const menuToggle = document.getElementById("menuToggle");
             const navbar = document.getElementById("navbar");
+            const whatsappOrderBtn = document.getElementById("whatsappOrderBtn");
+            const floatingOrderBtn = document.getElementById("floatingOrderBtn"); // NEW BTN
 
             // ─────── RENDER PRODUCTS ──────────────────
             function renderProducts() {
@@ -1202,17 +1117,14 @@
                     </div>
                 `).join('');
 
-                // Attach event listeners to product cards
                 document.querySelectorAll('.product-card').forEach(card => {
                     card.addEventListener('click', function(e) {
-                        // Don't trigger if the add-to-cart button was clicked
                         if (e.target.closest('.add-to-cart')) return;
                         const pid = parseInt(this.getAttribute('data-product-id'));
                         openQuickView(pid);
                     });
                 });
 
-                // Attach event listeners to add-to-cart buttons
                 document.querySelectorAll('.add-to-cart').forEach(btn => {
                     btn.addEventListener('click', function(e) {
                         e.stopPropagation();
@@ -1234,14 +1146,13 @@
                 }
                 updateCartUI();
                 showToast(`✅ ${product.name} added!`);
-                // Bump animation on cart icon
                 cartCountEl.classList.add('bump');
                 setTimeout(() => cartCountEl.classList.remove('bump'), 300);
             }
 
             function changeQty(id, delta) {
                 const item = cart.find(i => i.id === id);
-                ** (!item) return;
+                if (!item) return;
                 item.qty += delta;
                 if (item.qty <= 0) {
                     cart = cart.filter(i => i.id !== id);
@@ -1260,7 +1171,7 @@
                 cartCountEl.innerText = count;
 
                 if (cart.length === 0) {
-                    cartItemsList.innerHTML = '<p class="cart-empty-msg">Your **** ** empty 🌸<br><small>Add some delicious treats!</small></p>';
+                    cartItemsList.innerHTML = '<p class="cart-empty-msg">Your cart is empty 🌸<br><small>Add some delicious treats!</small></p>';
                     cartFooter.classList.remove('visible');
                 } else {
                     cartItemsList.innerHTML = cart.map(i => `
@@ -1280,7 +1191,6 @@
                         </div>
                     `).join('');
 
-                    // Attach listeners to cart item buttons
                     cartItemsList.querySelectorAll('.cart-qty-btn').forEach(btn => {
                         btn.addEventListener('click', function() {
                             const id = parseInt(this.getAttribute('data-id'));
@@ -1300,15 +1210,35 @@
 
                 const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
                 cartTotalEl.innerText = `₹${total}`;
+            }
 
-                // Build WhatsApp message
-                let message = "Hello Cake Delight! 🌸 I'd like to order:\n\n";
-                cart.forEach(i => {
-                    message +=
-                        `• ${i.name} × ${i.qty} — ₹${i.price * i.qty}\n`;
+            // ─────── WHATSAPP ORDER FUNCTION ─────────
+            function sendWhatsAppOrder() {
+                if (cart.length === 0) return;
+                
+                const phoneNumber = "917411467020";
+                let message = "Hello Cake Delight! 🌸\nI would like to place an order:\n\n";
+                
+                cart.forEach((item, index) => {
+                    message += `${index + 1}. *${item.name}*\n   Qty: ${item.qty} x ₹${item.price} = ₹${item.price * item.qty}\n`;
                 });
-                message += `\n💰 Total: ₹${total}\n📍 Delivery in Bagalkot.\n\nPlease confirm availability. Thank you!`;
-                whatsappOrderBtn.href = "https://wa.me/917411467020?text=" + encodeURIComponent(message);
+                
+                const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+                message += `\n*Total Bill Amount: ₹${total}*\n\nPlease let me know the confirmation and delivery details. Thank you!`;
+                
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+                
+                window.open(whatsappUrl, '_blank');
+            }
+
+            // ─────── NEW FLOATING BTN FUNCTION ────────
+            function sendGeneralWhatsAppInquiry(e) {
+                e.preventDefault();
+                const phoneNumber = "917411467020";
+                const message = encodeURIComponent("Hello Cake Delight! 🌸\nI am visiting your website and would like to place an online order. Could you share the details?");
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+                window.open(whatsappUrl, '_blank');
             }
 
             // ─────── QUICK VIEW MODAL ─────────────────
@@ -1318,8 +1248,7 @@
                 currentQuickViewProductId = id;
                 qvImg.src = product.img;
                 qvImg.onerror = function() {
-                    this.src =
-                        'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23ffe0d8%22 width=%22400%22 height=%22280%22 rx=%2220%22/><text x=%22200%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23ff6b6b%22 font-size=%2230%22>🎂</text></svg>';
+                    this.src = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22><rect fill=%22%23ffe0d8%22 width=%22400%22 height=%22280%22 rx=%2220%22/><text x=%22200%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23ff6b6b%22 font-size=%2230%22>🎂</text></svg>';
                 };
                 qvName.innerText = product.name;
                 qvPrice.innerText = '₹' + product.price;
@@ -1339,7 +1268,7 @@
                 cartDrawer.classList.add('open');
                 cartOverlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
-                updateCartUI(); // refresh cart UI each time it opens
+                updateCartUI();
             }
 
             function closeCart() {
@@ -1377,13 +1306,16 @@
             }
 
             // ─────── EVENT LISTENERS ──────────────────
-
-            // Cart toggle
             document.getElementById("cartBtn").addEventListener('click', openCart);
             document.getElementById("closeCart").addEventListener('click', closeCart);
             cartOverlay.addEventListener('click', closeCart);
+            whatsappOrderBtn.addEventListener('click', sendWhatsAppOrder);
+            
+            // New Event Listener for Floating Button
+            if(floatingOrderBtn) {
+                floatingOrderBtn.addEventListener('click', sendGeneralWhatsAppInquiry);
+            }
 
-            // Quick view modal
             document.getElementById("quickViewClose").addEventListener('click', closeQuickView);
             quickViewOverlay.addEventListener('click', function(e) {
                 if (e.target === quickViewOverlay) closeQuickView();
@@ -1395,7 +1327,6 @@
                 }
             });
 
-            // Close quick view with Escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     if (quickViewOverlay.classList.contains('active')) closeQuickView();
@@ -1404,7 +1335,6 @@
                 }
             });
 
-            // Mobile nav
             menuToggle.addEventListener('click', function() {
                 if (mobileNav.classList.contains('active')) {
                     closeMobileNav();
@@ -1414,46 +1344,21 @@
             });
             mobileOverlay.addEventListener('click', closeMobileNav);
 
-            // Close mobile nav when a link inside is clicked
             document.querySelectorAll('.mobile-nav-link').forEach(link => {
                 link.addEventListener('click', function() {
                     closeMobileNav();
                 });
             });
 
-            // Filter buttons
             document.querySelectorAll(".filter-btn").forEach(btn => {
                 btn.addEventListener("click", function() {
-                    document.querySelectorAll(".filter-btn").forEach(b => b.classList
-                        .remove("active"));
+                    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
                     this.classList.add("active");
                     activeFilter = this.getAttribute("data-cat");
                     renderProducts();
                 });
             });
 
-            // Custom cake form submission
-            document.getElementById("cakeForm").addEventListener("submit", function(e) {
-                e.preventDefault();
-                const size = document.getElementById("cakeSize").value;
-                const flavor = document.getElementById("cakeFlavor").value;
-                const filling = document.getElementById("cakeFilling").value;
-                const frosting = document.getElementById("cakeFrosting").value;
-                const message = document.getElementById("cakeMessage").value.trim();
-
-                let msg = "🌸 *Custom Cake Enquiry* 🌸\n\n";
-                msg += `📏 Size: ${size}\n`;
-                msg += `🍫 Flavor: ${flavor}\n`;
-                msg += `🧁 Filling: ${filling}\n`;
-                msg += `✨ Frosting: ${frosting}\n`;
-                if (message) msg += `💬 Message: ${message}\n`;
-                msg += `\n📍 Bagalkot delivery.\nPlease share pricing & availability. Thank you!`;
-
-                window.open("https://wa.me/917411467020?text=" + encodeURIComponent(msg), "_blank");
-                showToast('📲 Opening WhatsApp...');
-            });
-
-            // Navbar scroll effect
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 60) {
                     navbar.classList.add("scrolled");
@@ -1465,21 +1370,7 @@
             // ─────── INITIAL RENDER ───────────────────
             renderProducts();
             updateCartUI();
-
-            // ─────── EXPOSE TO GLOBAL SCOPE (for any inline needs) ──
-            window.addToCart = addToCart;
-            window.changeQty = changeQty;
-            window.removeItem = removeItem;
-            window.openQuickView = openQuickView;
-            window.closeQuickView = closeQuickView;
-
-            console.log('🌸 Cake Delight – All systems ready!');
-            console.log('📦 Products loaded:', products.length);
-            console.log('🛒 Cart initialized');
-            console.log('📲 WhatsApp ordering active');
         })();
     </script>
-
-<div style="color: red">Word to HTML trial - please <a href="https://wordtohtml.net/site/payment">Go PRO</a> to get whole HTML.</div>
 </body>
 </html>
